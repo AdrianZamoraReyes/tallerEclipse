@@ -56,11 +56,11 @@ public class HibernateApplication implements CommandLineRunner {
 		listaFacturas = billRepository.save(listaFacturas);
 		visits.get(0).setBill(b);
 		visitRepository.save(visits.get(0));
-
+		
 		p = petRepository.findById(8);
 		visits = visitRepository.findByPetId(p.getId());
 		for(Visit v : visits) {
 			System.out.println(v.toString());
-		}
+		}	
 	}
 }
